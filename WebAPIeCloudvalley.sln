@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIeCloudvalley", "WebAPIeCloudvalley\WebAPIeCloudvalley.csproj", "{50F35742-2A71-4F5C-887D-8C01B64BC535}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIeCloudvalley.Tests", "WebAPIeCloudvalley.Tests\WebAPIeCloudvalley.Tests.csproj", "{2EF7C5BC-66F6-4177-929F-4F022F85CEA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50F35742-2A71-4F5C-887D-8C01B64BC535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F35742-2A71-4F5C-887D-8C01B64BC535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F35742-2A71-4F5C-887D-8C01B64BC535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F35742-2A71-4F5C-887D-8C01B64BC535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF7C5BC-66F6-4177-929F-4F022F85CEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF7C5BC-66F6-4177-929F-4F022F85CEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF7C5BC-66F6-4177-929F-4F022F85CEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF7C5BC-66F6-4177-929F-4F022F85CEA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C878844-2605-4A67-BA99-3F5E26AAB690}
+	EndGlobalSection
+EndGlobal
