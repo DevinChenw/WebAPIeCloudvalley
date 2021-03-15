@@ -2,6 +2,7 @@
 
 Simple API allowing user to view data.
 
+## Web API Chart structure 
 ![image](https://github.com/znnylance/WebAPIeCloudvalley/blob/master/Picture/apiuml.png)
 
 ## Web API service usage example 
@@ -101,3 +102,6 @@ HOST: http://localhost/api/Order
                 ]
             }
         ]
+        
+## DB schema
+![image](https://github.com/znnylance/WebAPIeCloudvalley/blob/master/Picture/TableSchema.png)
