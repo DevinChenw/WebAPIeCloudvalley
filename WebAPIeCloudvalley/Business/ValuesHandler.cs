@@ -72,15 +72,21 @@ namespace WebAPIeCloudvalley.Business
         private static ApiResponseMessage<List<ProductViewModel>> GetProductGroupTotalUsageAmount(string usageaccountid,int pageCnt, int pageRows )
         {
             var result = new ApiResponseMessage<List<ProductViewModel>>();
-            result.Data = GetProducts().Join(GetLineItems(), p => p.Id, l => l.ProductId, (p, l) => new { p, l })
+            var resultData = GetProducts().Join(GetLineItems(), p => p.Id, l => l.ProductId, (p, l) => new { p, l })
                 .Where(x => x.l.UsageAccountId == usageaccountid)
                 .GroupBy(g => g.p.ProductName)
                 .Select(s => new ProductViewModel
                 {
                     ProductName = s.Key,
                     TotalUsageAmount = s.Sum(t => t.l.UnblendedCost)
-                }).Skip((pageCnt - 1) * pageRows).Take(pageRows).ToList();
+                });
 
+            if (pageCnt != 0 && pageRows !=0)
+            {
+                resultData.Skip((pageCnt - 1) * pageRows).Take(pageRows);
+            }
+
+            result.Data = resultData.ToList();
             return result;
         }
 
@@ -91,7 +97,7 @@ namespace WebAPIeCloudvalley.Business
         private static ApiResponseMessage<List<ProductViewModel>> GetProductGroupDateTotalUsageAmount(string usageaccountid, int pageCnt, int pageRows)
         {
             var result = new ApiResponseMessage<List<ProductViewModel>>();
-            result.Data = GetProducts().Join(GetLineItems(), p => p.Id, l => l.ProductId, (p, l) => new { p, l })
+            var resultData = GetProducts().Join(GetLineItems(), p => p.Id, l => l.ProductId, (p, l) => new { p, l })
                 .Where(x => x.l.UsageAccountId == usageaccountid)
                 .GroupBy(g => new { g.p.ProductName,g.l.UsageEndDate })
                 .Select(s => new ProductViewModel
@@ -99,8 +105,14 @@ namespace WebAPIeCloudvalley.Business
                     ProductName = s.Key.ProductName,
                     UsageStartDate = s.Key.UsageEndDate,
                     TotalUsageAmount = s.Sum(t => t.l.UnblendedCost)
-                }).Skip((pageCnt - 1) * pageRows).Take(pageRows).ToList();
+                });
 
+            if (pageCnt != 0 && pageRows !=0)
+            {
+                resultData.Skip((pageCnt - 1) * pageRows).Take(pageRows);
+            }
+
+            result.Data = resultData.ToList();
             return result;
         }
 
